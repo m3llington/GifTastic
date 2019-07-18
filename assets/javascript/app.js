@@ -78,9 +78,11 @@ $(document).on("click", "button", function() {
             var subjectImage = $("<img>");
 
             subjectImage.attr("src", still);
+            // subjectImage.attr("data-still", still);
+            // subjectImage.attr("data-animate", animate);
+            subjectImage.attr("data-state", "still");
             subjectImage.attr("data-still", still);
             subjectImage.attr("data-animate", animate);
-            subjectImage.attr("state", still);
             subjectImage.addClass("subject-image");
 
             // Places p tag and actual image inside the gifDiv
@@ -99,6 +101,7 @@ $(document).on("click", "button", function() {
   $(document).on("click", ".subject-image", function() {
     console.log("test");
     var state = $(this).attr("data-state");
+    console.log(state);
 
     if (state === "still") {
       $(this).attr("src", $(this).attr("data-animate"));
